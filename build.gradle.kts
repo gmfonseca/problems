@@ -18,22 +18,23 @@ jacoco {
     toolVersion = "0.8.7"
 }
 
+fun Project.containsTest(): Boolean {
+    return file("$projectDir/src/test").walkBottomUp().any { it.isFile }
+}
+
 tasks.register("codeCoverageReport", JacocoReport::class) {
     subprojects subproject@{
         apply(plugin = "jacoco")
 
         plugins.withType(JacocoPlugin::class).configureEach {
-            tasks.matching { it.extensions.findByType<JacocoTaskExtension>() != null }.configureEach {
-                sourceSets(this@subproject.the<SourceSetContainer>()["main"])
+            tasks.matching { it.extensions.findByType<JacocoTaskExtension>() != null }
+                .configureEach {
+                    sourceSets(this@subproject.the<SourceSetContainer>()["main"])
 
-                if (file("${this@subproject.buildDir}/jacoco/test.exec").exists()) {
-                    executionData(this)
+                    if (containsTest()) {
+                        executionData(this)
+                    }
                 }
-            }
-
-            tasks.matching { it.extensions.findByType<JacocoTaskExtension>() != null }.forEach {
-                rootProject.tasks.getByName("codeCoverageReport").dependsOn(it)
-            }
         }
 
         tasks.withType(Test::class).configureEach {
