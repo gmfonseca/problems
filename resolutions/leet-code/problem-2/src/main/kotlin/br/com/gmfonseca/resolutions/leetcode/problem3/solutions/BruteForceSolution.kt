@@ -1,7 +1,7 @@
-package br.com.gmfonseca.resolutions.leetcode.problem2.solutions
+package br.com.gmfonseca.resolutions.leetcode.problem3.solutions
 
-import br.com.gmfonseca.resolutions.leetcode.problem2.AddTwoNumbersSolution
-import br.com.gmfonseca.resolutions.leetcode.problem2.model.ListNode
+import br.com.gmfonseca.resolutions.leetcode.problem3.AddTwoNumbersSolution
+import br.com.gmfonseca.resolutions.leetcode.problem3.model.ListNode
 
 class BruteForceSolution : AddTwoNumbersSolution {
     override fun addTwoNumbers(firstNode: ListNode, secondNode: ListNode): ListNode {

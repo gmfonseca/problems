@@ -5,6 +5,8 @@ import java.util.NoSuchElementException
 
 class TwoSumCheaperSolution : TwoSumSolution {
     override fun twoSum(nums: IntArray, target: Int): IntArray {
+        nums.mapIndexed { i, it -> if (it == 0) i else null  }.filterNotNull().toSet()
+
         for (i in nums.indices) {
             val missing = target - nums[i]
 

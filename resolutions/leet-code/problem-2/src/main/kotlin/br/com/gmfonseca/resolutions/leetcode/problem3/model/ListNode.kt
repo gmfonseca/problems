@@ -1,4 +1,4 @@
-package br.com.gmfonseca.resolutions.leetcode.problem2.model
+package br.com.gmfonseca.resolutions.leetcode.problem3.model
 
 data class ListNode(var `val`: Int) {
     var next: ListNode? = null

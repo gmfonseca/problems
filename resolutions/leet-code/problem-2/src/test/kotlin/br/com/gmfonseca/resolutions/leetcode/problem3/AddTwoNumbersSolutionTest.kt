@@ -1,7 +1,7 @@
-package br.com.gmfonseca.resolutions.leetcode.problem2
+package br.com.gmfonseca.resolutions.leetcode.problem3
 
-import br.com.gmfonseca.resolutions.leetcode.problem2.model.AddTwoNumbersInput
-import br.com.gmfonseca.resolutions.leetcode.problem2.model.ListNode
+import br.com.gmfonseca.resolutions.leetcode.problem3.model.AddTwoNumbersInput
+import br.com.gmfonseca.resolutions.leetcode.problem3.model.ListNode
 import org.junit.Test
 import kotlin.test.assertEquals
 
